@@ -533,6 +533,8 @@ const isIOS = (UA && /iphone|ipad|ipod|ios/.test(UA)) || (weexPlatform === 'ios'
 const isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
 const isPhantomJS = UA && /phantomjs/.test(UA);
 const isFF = UA && UA.match(/firefox\/(\d+)/);
+const isPaleMoon = UA && UA.match(/palemoon\/(\d+)/);
+const isBasilisk = UA && UA.match(/basilisk\/(\d+)/);
 
 // Firefox has a "watch" function on Object.prototype...
 const nativeWatch = ({}).watch;
@@ -7529,7 +7531,7 @@ function createOnceHandler$1 (event, handler, capture) {
 // #9446: Firefox <= 53 (in particular, ESR 52) has incorrect Event.timeStamp
 // implementation and does not fire microtasks in between event propagation, so
 // safe to exclude.
-const useMicrotaskFix = isUsingMicroTask && !(isFF && Number(isFF[1]) <= 53);
+const useMicrotaskFix = isUsingMicroTask && !(isFF && Number(isFF[1]) <= 53) && !isPaleMoon && !isBasilisk;
 
 function add$1 (
   name,

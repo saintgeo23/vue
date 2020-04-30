@@ -3715,7 +3715,7 @@ function resolveAsyncComponent (
             if (isUndef(factory.resolved)) {
               reject(
                  ("timeout (" + (res.timeout) + "ms)")
-
+                  
               );
             }
           }, res.timeout);
@@ -10292,7 +10292,7 @@ function processAttrs (el) {
           name = name.slice(1, -1);
         }
         if (
-
+          
           value.trim().length === 0
         ) {
           warn$2(
@@ -10427,7 +10427,7 @@ function makeAttrsMap (attrs) {
   var map = {};
   for (var i = 0, l = attrs.length; i < l; i++) {
     if (
-
+      
       map[attrs[i].name] && !isIE && !isEdge
     ) {
       warn$2('duplicate attribute: ' + attrs[i].name, attrs[i]);

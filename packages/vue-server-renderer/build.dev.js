@@ -653,6 +653,8 @@ var isIOS = (UA && /iphone|ipad|ipod|ios/.test(UA)) || (weexPlatform === 'ios');
 var isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
 var isPhantomJS = UA && /phantomjs/.test(UA);
 var isFF = UA && UA.match(/firefox\/(\d+)/);
+var isPaleMoon = UA && UA.match(/palemoon\/(\d+)/);
+var isBasilisk = UA && UA.match(/basilisk\/(\d+)/);
 
 // Firefox has a "watch" function on Object.prototype...
 var nativeWatch = ({}).watch;
